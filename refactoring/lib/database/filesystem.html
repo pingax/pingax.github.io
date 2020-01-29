@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.4" />
+<title>geode.lib.database.filesystem API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>geode.lib.database.filesystem</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># ------------------------------------------------------------------------------
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 3 of the License.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+# ------------------------------------------------------------------------------
+
+# Geode
+from geode.lib.common import CommonPath, CommonConfiguration
+
+
+# ------------------------------------------------------------------------------
+#   Class
+# ------------------------------------------------------------------------------
+
+class FileSystemDatabase(CommonPath):
+
+    def __init__(self, *paths, extension=&#34;ini&#34;, mkdir=False, **kwargs):
+        &#34;&#34;&#34; Constructor
+
+        Parameters
+        ----------
+        paths : tuple
+            Represents database directory paths on filesystem based of str or
+            pathlib.Path values.
+        extension : str, optional
+            Extension used to mark database file (Default: ini).
+        mkdir : bool, optional
+            Generate the database directory when the path not exists and the
+            value is True, raises an exception otherwise (Default: False).
+        kwargs : dict, optional
+            Positional arguments used by pathlib.Path.mkdir method.
+
+        See Also
+        --------
+        pathlib.Path.mkdir : Create a new directoy at the specified path.
+
+        Raises
+        ------
+        NotADirectoryError
+            When the specified path is not a directory.
+        FileNotFoundError
+            When the specified path not exists and mkdir flag is set to False.
+        &#34;&#34;&#34;
+
+        CommonPath.__init__(self, *paths)
+
+        if self.path.exists() and not self.path.is_dir():
+            raise NotADirectoryError(
+                f&#34;Specified path &#39;{self.path}&#39; is not a directory&#34;)
+
+        if not self.path.exists():
+            if not mkdir:
+                raise FileNotFoundError(
+                    f&#34;Cannot found &#39;{self.path}&#39; directory on filesystem&#34;)
+
+            self.path.mkdir(**kwargs)
+
+        if type(extension) is not str:
+            raise TypeError(f&#34;File extension needs to be a str, &#34;
+                            f&#34;not a {type(extension).__name__}&#34;)
+
+        self.__extension = extension
+
+        # Keep table files based on filename without extension as keys
+        self.__tables = dict()
+
+    def __get_table(self, table):
+        &#34;&#34;&#34; Retrieve a specific table from local cache
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+
+        Returns
+        -------
+        geode.lib.common.CommonConfiguration
+            Table object
+
+        Raises
+        ------
+        TypeError
+            When the specified table name type is not a str.
+        FileNotFoundError
+            When the specified table name is not in local cache.
+        &#34;&#34;&#34;
+
+        if type(table) is not str:
+            raise TypeError(
+                f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+        if table not in self.__tables.keys():
+            raise FileNotFoundError(
+                f&#34;Cannot found table &#39;{table}&#39; in database folder&#34;)
+
+        return self.__tables[table]
+
+    def read(self):
+        &#34;&#34;&#34; Read and retrieve available files in database directory
+
+        Files are retrieving from the &#39;extension&#39; attribute set in object
+        constructor.
+
+        Raises
+        ------
+        FileNotFoundError
+            When the database directory was not found on filesystem.
+        &#34;&#34;&#34;
+
+        if not self.exists():
+            raise FileNotFoundError(
+                f&#34;Cannot found &#39;{self.path}&#39; directory on filesystem&#34;)
+
+        for filepath in self.path.glob(f&#34;*.{self.__extension}&#34;):
+            self.__tables[filepath.stem] = CommonConfiguration(filepath)
+
+    def rename_table(self, table, new_name):
+        &#34;&#34;&#34; Rename a specific table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        new_name : str
+            New table name.
+
+        Returns
+        -------
+        geode.lib.common.CommonConfiguration
+            Renamed database object.
+
+        Raises
+        ------
+        TypeError
+            When the specified new table name type is not a str.
+        FileExistsError
+            When the specified new table name was already used by another
+            database file on filesystem.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if type(new_name) is not str:
+            raise TypeError(f&#34;New table name needs to be a str, &#34;
+                            f&#34;not a {type(new_name).__name__}&#34;)
+
+        filepath = self.path.joinpath(f&#34;{new_name}.{self.__extension}&#34;)
+
+        if filepath.exists():
+            raise FileExistsError(f&#34;Cannot use &#39;{new_name}&#39; as new table name &#34;
+                                  f&#34;since this name is already taken&#34;)
+
+        table_object.path.rename(filepath)
+
+        self.__tables[new_name] = table_object
+
+        del self.__tables[table]
+
+        return table_object
+
+    def create_table(self, table):
+        &#34;&#34;&#34; Create a new table from a specific name
+
+        Parameters
+        ----------
+        table : str
+            Table name.
+
+        Returns
+        -------
+        geode.lib.common.CommonConfiguration
+            Created database object.
+
+        Raises
+        ------
+        TypeError
+            When the specified table name type is not a str.
+        FileExistsError
+            When the specified table name is already used by another database
+            file.
+        &#34;&#34;&#34;
+
+        if type(table) is not str:
+            raise TypeError(
+                f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+        if table in self.__tables.keys():
+            raise FileExistsError(
+                f&#34;Table &#39;{table}&#39; already exists in database folder&#34;)
+
+        filepath = self.path.joinpath(f&#34;{table}.{self.__extension}&#34;)
+
+        table_object = CommonConfiguration(filepath)
+        table_object.write()
+
+        self.__tables[filepath.stem] = table_object
+
+        return table_object
+
+    def drop_table(self, table):
+        &#34;&#34;&#34; Drop a specific table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+
+        Raises
+        ------
+        TypeError
+            When the specified table name type is not a str.
+        FileNotFoundError
+            When the specified table name cannot be found in database
+            directory.
+        &#34;&#34;&#34;
+
+        if type(table) is not str:
+            raise TypeError(
+                f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+        if table not in self.__tables.keys():
+            raise FileNotFoundError(
+                f&#34;Table &#39;{table}&#39; did not exists and cannot be removed&#34;)
+
+        table_object = self.__get_table(table)
+        table_object.path.unlink()
+
+        del table_object, self.__tables[table]
+
+    def delete(self, table, row):
+        &#34;&#34;&#34; Delete a specific row from specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        row : str
+
+        Raises
+        ------
+        TypeError
+            When the specified row identifier type is not a str.
+        KeyError
+            When the specified row identifier did not exists in table object.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if type(row) is not str:
+            raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                            f&#34;not a {type(row).__name__}&#34;)
+
+        if not table_object.has_section(row):
+            raise KeyError(f&#34;Cannot update row &#39;{row}&#39; since this one did not &#34;
+                           f&#34;exists in table &#39;{table}&#39;&#34;)
+
+        table_object.remove_section(row)
+        table_object.write()
+
+    def select(self, table, *rows):
+        &#34;&#34;&#34; Select specific rows from specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        rows : tuple of str, optional
+            Rows identifiers to check in founded table object (Default: all).
+
+        Returns
+        -------
+        dict
+            Founded rows from specified table with row identifier as keys.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if not rows:
+            rows = table_object.sections()
+
+        results = dict()
+
+        for row in rows:
+            if type(row) is not str:
+                raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                                f&#34;not a {type(row).__name__}&#34;)
+
+            if not table_object.has_section(row):
+                continue
+
+            results[row] = dict(table_object.items(row))
+
+        return results
+
+    def insert(self, table, row, **data):
+        &#34;&#34;&#34; Insert a new row in specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        row : str
+            Row identifier key to check in founded table object.
+        data : dict
+            Row data.
+
+        Raises
+        ------
+        TypeError
+            When the specified row identifier type is not a str.
+        ValueError
+            When the specified row identifier already exists in table object.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if type(row) is not str:
+            raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                            f&#34;not a {type(row).__name__}&#34;)
+
+        if table_object.has_section(row):
+            raise ValueError(f&#34;Cannot insert row &#39;{row}&#39; since this one &#34;
+                             f&#34;already exists in table &#39;{table}&#39;&#34;)
+
+        table_object.add_section(row)
+
+        try:
+            for key, value in data.items():
+                table_object.set(row, key, value)
+
+            table_object.write()
+
+        except TypeError as error:
+            table_object.remove_section(row)
+
+            raise TypeError(error)
+
+    def update(self, table, row, **data):
+        &#34;&#34;&#34; Update a specific row in specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        row : str
+            Row identifier key to check in founded table object.
+        data : dict
+            New row data.
+
+        Raises
+        ------
+        TypeError
+            When the specified row identifier type is not a str.
+        KeyError
+            When the specified row identifier did not exists in table object.
+        &#34;&#34;&#34;
+
+        if type(row) is not str:
+            raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                            f&#34;not a {type(row).__name__}&#34;)
+
+        table_object = self.__get_table(table)
+
+        if not table_object.has_section(row):
+            raise KeyError(f&#34;Cannot update row &#39;{row}&#39; since this one did not &#34;
+                           f&#34;exists in table &#39;{table}&#39;&#34;)
+
+        for key, value in data.items():
+            table_object.set(row, key, value)
+
+        table_object.write()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase"><code class="flex name class">
+<span>class <span class="ident">FileSystemDatabase</span></span>
+<span>(</span><span>*paths, extension='ini', mkdir=False, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Constructor</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>paths</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>Represents database directory paths on filesystem based of str or
+pathlib.Path values.</dd>
+<dt><strong><code>extension</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Extension used to mark database file (Default: ini).</dd>
+<dt><strong><code>mkdir</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Generate the database directory when the path not exists and the
+value is True, raises an exception otherwise (Default: False).</dd>
+<dt><strong><code>kwargs</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Positional arguments used by pathlib.Path.mkdir method.</dd>
+</dl>
+<h2 id="see-also">See Also</h2>
+<dl>
+<dt><code>pathlib.Path.mkdir</code></dt>
+<dd>Create a new directoy at the specified path.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>NotADirectoryError</code></dt>
+<dd>When the specified path is not a directory.</dd>
+<dt><code>FileNotFoundError</code></dt>
+<dd>When the specified path not exists and mkdir flag is set to False.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FileSystemDatabase(CommonPath):
+
+    def __init__(self, *paths, extension=&#34;ini&#34;, mkdir=False, **kwargs):
+        &#34;&#34;&#34; Constructor
+
+        Parameters
+        ----------
+        paths : tuple
+            Represents database directory paths on filesystem based of str or
+            pathlib.Path values.
+        extension : str, optional
+            Extension used to mark database file (Default: ini).
+        mkdir : bool, optional
+            Generate the database directory when the path not exists and the
+            value is True, raises an exception otherwise (Default: False).
+        kwargs : dict, optional
+            Positional arguments used by pathlib.Path.mkdir method.
+
+        See Also
+        --------
+        pathlib.Path.mkdir : Create a new directoy at the specified path.
+
+        Raises
+        ------
+        NotADirectoryError
+            When the specified path is not a directory.
+        FileNotFoundError
+            When the specified path not exists and mkdir flag is set to False.
+        &#34;&#34;&#34;
+
+        CommonPath.__init__(self, *paths)
+
+        if self.path.exists() and not self.path.is_dir():
+            raise NotADirectoryError(
+                f&#34;Specified path &#39;{self.path}&#39; is not a directory&#34;)
+
+        if not self.path.exists():
+            if not mkdir:
+                raise FileNotFoundError(
+                    f&#34;Cannot found &#39;{self.path}&#39; directory on filesystem&#34;)
+
+            self.path.mkdir(**kwargs)
+
+        if type(extension) is not str:
+            raise TypeError(f&#34;File extension needs to be a str, &#34;
+                            f&#34;not a {type(extension).__name__}&#34;)
+
+        self.__extension = extension
+
+        # Keep table files based on filename without extension as keys
+        self.__tables = dict()
+
+    def __get_table(self, table):
+        &#34;&#34;&#34; Retrieve a specific table from local cache
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+
+        Returns
+        -------
+        geode.lib.common.CommonConfiguration
+            Table object
+
+        Raises
+        ------
+        TypeError
+            When the specified table name type is not a str.
+        FileNotFoundError
+            When the specified table name is not in local cache.
+        &#34;&#34;&#34;
+
+        if type(table) is not str:
+            raise TypeError(
+                f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+        if table not in self.__tables.keys():
+            raise FileNotFoundError(
+                f&#34;Cannot found table &#39;{table}&#39; in database folder&#34;)
+
+        return self.__tables[table]
+
+    def read(self):
+        &#34;&#34;&#34; Read and retrieve available files in database directory
+
+        Files are retrieving from the &#39;extension&#39; attribute set in object
+        constructor.
+
+        Raises
+        ------
+        FileNotFoundError
+            When the database directory was not found on filesystem.
+        &#34;&#34;&#34;
+
+        if not self.exists():
+            raise FileNotFoundError(
+                f&#34;Cannot found &#39;{self.path}&#39; directory on filesystem&#34;)
+
+        for filepath in self.path.glob(f&#34;*.{self.__extension}&#34;):
+            self.__tables[filepath.stem] = CommonConfiguration(filepath)
+
+    def rename_table(self, table, new_name):
+        &#34;&#34;&#34; Rename a specific table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        new_name : str
+            New table name.
+
+        Returns
+        -------
+        geode.lib.common.CommonConfiguration
+            Renamed database object.
+
+        Raises
+        ------
+        TypeError
+            When the specified new table name type is not a str.
+        FileExistsError
+            When the specified new table name was already used by another
+            database file on filesystem.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if type(new_name) is not str:
+            raise TypeError(f&#34;New table name needs to be a str, &#34;
+                            f&#34;not a {type(new_name).__name__}&#34;)
+
+        filepath = self.path.joinpath(f&#34;{new_name}.{self.__extension}&#34;)
+
+        if filepath.exists():
+            raise FileExistsError(f&#34;Cannot use &#39;{new_name}&#39; as new table name &#34;
+                                  f&#34;since this name is already taken&#34;)
+
+        table_object.path.rename(filepath)
+
+        self.__tables[new_name] = table_object
+
+        del self.__tables[table]
+
+        return table_object
+
+    def create_table(self, table):
+        &#34;&#34;&#34; Create a new table from a specific name
+
+        Parameters
+        ----------
+        table : str
+            Table name.
+
+        Returns
+        -------
+        geode.lib.common.CommonConfiguration
+            Created database object.
+
+        Raises
+        ------
+        TypeError
+            When the specified table name type is not a str.
+        FileExistsError
+            When the specified table name is already used by another database
+            file.
+        &#34;&#34;&#34;
+
+        if type(table) is not str:
+            raise TypeError(
+                f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+        if table in self.__tables.keys():
+            raise FileExistsError(
+                f&#34;Table &#39;{table}&#39; already exists in database folder&#34;)
+
+        filepath = self.path.joinpath(f&#34;{table}.{self.__extension}&#34;)
+
+        table_object = CommonConfiguration(filepath)
+        table_object.write()
+
+        self.__tables[filepath.stem] = table_object
+
+        return table_object
+
+    def drop_table(self, table):
+        &#34;&#34;&#34; Drop a specific table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+
+        Raises
+        ------
+        TypeError
+            When the specified table name type is not a str.
+        FileNotFoundError
+            When the specified table name cannot be found in database
+            directory.
+        &#34;&#34;&#34;
+
+        if type(table) is not str:
+            raise TypeError(
+                f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+        if table not in self.__tables.keys():
+            raise FileNotFoundError(
+                f&#34;Table &#39;{table}&#39; did not exists and cannot be removed&#34;)
+
+        table_object = self.__get_table(table)
+        table_object.path.unlink()
+
+        del table_object, self.__tables[table]
+
+    def delete(self, table, row):
+        &#34;&#34;&#34; Delete a specific row from specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        row : str
+
+        Raises
+        ------
+        TypeError
+            When the specified row identifier type is not a str.
+        KeyError
+            When the specified row identifier did not exists in table object.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if type(row) is not str:
+            raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                            f&#34;not a {type(row).__name__}&#34;)
+
+        if not table_object.has_section(row):
+            raise KeyError(f&#34;Cannot update row &#39;{row}&#39; since this one did not &#34;
+                           f&#34;exists in table &#39;{table}&#39;&#34;)
+
+        table_object.remove_section(row)
+        table_object.write()
+
+    def select(self, table, *rows):
+        &#34;&#34;&#34; Select specific rows from specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        rows : tuple of str, optional
+            Rows identifiers to check in founded table object (Default: all).
+
+        Returns
+        -------
+        dict
+            Founded rows from specified table with row identifier as keys.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if not rows:
+            rows = table_object.sections()
+
+        results = dict()
+
+        for row in rows:
+            if type(row) is not str:
+                raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                                f&#34;not a {type(row).__name__}&#34;)
+
+            if not table_object.has_section(row):
+                continue
+
+            results[row] = dict(table_object.items(row))
+
+        return results
+
+    def insert(self, table, row, **data):
+        &#34;&#34;&#34; Insert a new row in specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        row : str
+            Row identifier key to check in founded table object.
+        data : dict
+            Row data.
+
+        Raises
+        ------
+        TypeError
+            When the specified row identifier type is not a str.
+        ValueError
+            When the specified row identifier already exists in table object.
+        &#34;&#34;&#34;
+
+        table_object = self.__get_table(table)
+
+        if type(row) is not str:
+            raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                            f&#34;not a {type(row).__name__}&#34;)
+
+        if table_object.has_section(row):
+            raise ValueError(f&#34;Cannot insert row &#39;{row}&#39; since this one &#34;
+                             f&#34;already exists in table &#39;{table}&#39;&#34;)
+
+        table_object.add_section(row)
+
+        try:
+            for key, value in data.items():
+                table_object.set(row, key, value)
+
+            table_object.write()
+
+        except TypeError as error:
+            table_object.remove_section(row)
+
+            raise TypeError(error)
+
+    def update(self, table, row, **data):
+        &#34;&#34;&#34; Update a specific row in specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name to find in local cache.
+        row : str
+            Row identifier key to check in founded table object.
+        data : dict
+            New row data.
+
+        Raises
+        ------
+        TypeError
+            When the specified row identifier type is not a str.
+        KeyError
+            When the specified row identifier did not exists in table object.
+        &#34;&#34;&#34;
+
+        if type(row) is not str:
+            raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                            f&#34;not a {type(row).__name__}&#34;)
+
+        table_object = self.__get_table(table)
+
+        if not table_object.has_section(row):
+            raise KeyError(f&#34;Cannot update row &#39;{row}&#39; since this one did not &#34;
+                           f&#34;exists in table &#39;{table}&#39;&#34;)
+
+        for key, value in data.items():
+            table_object.set(row, key, value)
+
+        table_object.write()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="geode.lib.common.CommonPath" href="../common.html#geode.lib.common.CommonPath">CommonPath</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.create_table"><code class="name flex">
+<span>def <span class="ident">create_table</span></span>(<span>self, table)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Create a new table from a specific name</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><a title="geode.lib.common.CommonConfiguration" href="../common.html#geode.lib.common.CommonConfiguration"><code>CommonConfiguration</code></a></dt>
+<dd>Created database object.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>When the specified table name type is not a str.</dd>
+<dt><code>FileExistsError</code></dt>
+<dd>When the specified table name is already used by another database
+file.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table(self, table):
+    &#34;&#34;&#34; Create a new table from a specific name
+
+    Parameters
+    ----------
+    table : str
+        Table name.
+
+    Returns
+    -------
+    geode.lib.common.CommonConfiguration
+        Created database object.
+
+    Raises
+    ------
+    TypeError
+        When the specified table name type is not a str.
+    FileExistsError
+        When the specified table name is already used by another database
+        file.
+    &#34;&#34;&#34;
+
+    if type(table) is not str:
+        raise TypeError(
+            f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+    if table in self.__tables.keys():
+        raise FileExistsError(
+            f&#34;Table &#39;{table}&#39; already exists in database folder&#34;)
+
+    filepath = self.path.joinpath(f&#34;{table}.{self.__extension}&#34;)
+
+    table_object = CommonConfiguration(filepath)
+    table_object.write()
+
+    self.__tables[filepath.stem] = table_object
+
+    return table_object</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.delete"><code class="name flex">
+<span>def <span class="ident">delete</span></span>(<span>self, table, row)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Delete a specific row from specified table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name to find in local cache.</dd>
+<dt><strong><code>row</code></strong> :&ensp;<code>str</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>When the specified row identifier type is not a str.</dd>
+<dt><code>KeyError</code></dt>
+<dd>When the specified row identifier did not exists in table object.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete(self, table, row):
+    &#34;&#34;&#34; Delete a specific row from specified table
+
+    Parameters
+    ----------
+    table : str
+        Table name to find in local cache.
+    row : str
+
+    Raises
+    ------
+    TypeError
+        When the specified row identifier type is not a str.
+    KeyError
+        When the specified row identifier did not exists in table object.
+    &#34;&#34;&#34;
+
+    table_object = self.__get_table(table)
+
+    if type(row) is not str:
+        raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                        f&#34;not a {type(row).__name__}&#34;)
+
+    if not table_object.has_section(row):
+        raise KeyError(f&#34;Cannot update row &#39;{row}&#39; since this one did not &#34;
+                       f&#34;exists in table &#39;{table}&#39;&#34;)
+
+    table_object.remove_section(row)
+    table_object.write()</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.drop_table"><code class="name flex">
+<span>def <span class="ident">drop_table</span></span>(<span>self, table)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Drop a specific table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name to find in local cache.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>When the specified table name type is not a str.</dd>
+<dt><code>FileNotFoundError</code></dt>
+<dd>When the specified table name cannot be found in database
+directory.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drop_table(self, table):
+    &#34;&#34;&#34; Drop a specific table
+
+    Parameters
+    ----------
+    table : str
+        Table name to find in local cache.
+
+    Raises
+    ------
+    TypeError
+        When the specified table name type is not a str.
+    FileNotFoundError
+        When the specified table name cannot be found in database
+        directory.
+    &#34;&#34;&#34;
+
+    if type(table) is not str:
+        raise TypeError(
+            f&#34;Table name needs to be a str, not a {type(table).__name__}&#34;)
+
+    if table not in self.__tables.keys():
+        raise FileNotFoundError(
+            f&#34;Table &#39;{table}&#39; did not exists and cannot be removed&#34;)
+
+    table_object = self.__get_table(table)
+    table_object.path.unlink()
+
+    del table_object, self.__tables[table]</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.insert"><code class="name flex">
+<span>def <span class="ident">insert</span></span>(<span>self, table, row, **data)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Insert a new row in specified table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name to find in local cache.</dd>
+<dt><strong><code>row</code></strong> :&ensp;<code>str</code></dt>
+<dd>Row identifier key to check in founded table object.</dd>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Row data.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>When the specified row identifier type is not a str.</dd>
+<dt><code>ValueError</code></dt>
+<dd>When the specified row identifier already exists in table object.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert(self, table, row, **data):
+    &#34;&#34;&#34; Insert a new row in specified table
+
+    Parameters
+    ----------
+    table : str
+        Table name to find in local cache.
+    row : str
+        Row identifier key to check in founded table object.
+    data : dict
+        Row data.
+
+    Raises
+    ------
+    TypeError
+        When the specified row identifier type is not a str.
+    ValueError
+        When the specified row identifier already exists in table object.
+    &#34;&#34;&#34;
+
+    table_object = self.__get_table(table)
+
+    if type(row) is not str:
+        raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                        f&#34;not a {type(row).__name__}&#34;)
+
+    if table_object.has_section(row):
+        raise ValueError(f&#34;Cannot insert row &#39;{row}&#39; since this one &#34;
+                         f&#34;already exists in table &#39;{table}&#39;&#34;)
+
+    table_object.add_section(row)
+
+    try:
+        for key, value in data.items():
+            table_object.set(row, key, value)
+
+        table_object.write()
+
+    except TypeError as error:
+        table_object.remove_section(row)
+
+        raise TypeError(error)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.read"><code class="name flex">
+<span>def <span class="ident">read</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Read and retrieve available files in database directory</p>
+<p>Files are retrieving from the 'extension' attribute set in object
+constructor.</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>FileNotFoundError</code></dt>
+<dd>When the database directory was not found on filesystem.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read(self):
+    &#34;&#34;&#34; Read and retrieve available files in database directory
+
+    Files are retrieving from the &#39;extension&#39; attribute set in object
+    constructor.
+
+    Raises
+    ------
+    FileNotFoundError
+        When the database directory was not found on filesystem.
+    &#34;&#34;&#34;
+
+    if not self.exists():
+        raise FileNotFoundError(
+            f&#34;Cannot found &#39;{self.path}&#39; directory on filesystem&#34;)
+
+    for filepath in self.path.glob(f&#34;*.{self.__extension}&#34;):
+        self.__tables[filepath.stem] = CommonConfiguration(filepath)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.rename_table"><code class="name flex">
+<span>def <span class="ident">rename_table</span></span>(<span>self, table, new_name)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Rename a specific table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name to find in local cache.</dd>
+<dt><strong><code>new_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>New table name.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><a title="geode.lib.common.CommonConfiguration" href="../common.html#geode.lib.common.CommonConfiguration"><code>CommonConfiguration</code></a></dt>
+<dd>Renamed database object.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>When the specified new table name type is not a str.</dd>
+<dt><code>FileExistsError</code></dt>
+<dd>When the specified new table name was already used by another
+database file on filesystem.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rename_table(self, table, new_name):
+    &#34;&#34;&#34; Rename a specific table
+
+    Parameters
+    ----------
+    table : str
+        Table name to find in local cache.
+    new_name : str
+        New table name.
+
+    Returns
+    -------
+    geode.lib.common.CommonConfiguration
+        Renamed database object.
+
+    Raises
+    ------
+    TypeError
+        When the specified new table name type is not a str.
+    FileExistsError
+        When the specified new table name was already used by another
+        database file on filesystem.
+    &#34;&#34;&#34;
+
+    table_object = self.__get_table(table)
+
+    if type(new_name) is not str:
+        raise TypeError(f&#34;New table name needs to be a str, &#34;
+                        f&#34;not a {type(new_name).__name__}&#34;)
+
+    filepath = self.path.joinpath(f&#34;{new_name}.{self.__extension}&#34;)
+
+    if filepath.exists():
+        raise FileExistsError(f&#34;Cannot use &#39;{new_name}&#39; as new table name &#34;
+                              f&#34;since this name is already taken&#34;)
+
+    table_object.path.rename(filepath)
+
+    self.__tables[new_name] = table_object
+
+    del self.__tables[table]
+
+    return table_object</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.select"><code class="name flex">
+<span>def <span class="ident">select</span></span>(<span>self, table, *rows)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Select specific rows from specified table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name to find in local cache.</dd>
+<dt><strong><code>rows</code></strong> :&ensp;<code>tuple</code> of <code>str</code>, optional</dt>
+<dd>Rows identifiers to check in founded table object (Default: all).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Founded rows from specified table with row identifier as keys.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select(self, table, *rows):
+    &#34;&#34;&#34; Select specific rows from specified table
+
+    Parameters
+    ----------
+    table : str
+        Table name to find in local cache.
+    rows : tuple of str, optional
+        Rows identifiers to check in founded table object (Default: all).
+
+    Returns
+    -------
+    dict
+        Founded rows from specified table with row identifier as keys.
+    &#34;&#34;&#34;
+
+    table_object = self.__get_table(table)
+
+    if not rows:
+        rows = table_object.sections()
+
+    results = dict()
+
+    for row in rows:
+        if type(row) is not str:
+            raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                            f&#34;not a {type(row).__name__}&#34;)
+
+        if not table_object.has_section(row):
+            continue
+
+        results[row] = dict(table_object.items(row))
+
+    return results</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.filesystem.FileSystemDatabase.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, table, row, **data)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Update a specific row in specified table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name to find in local cache.</dd>
+<dt><strong><code>row</code></strong> :&ensp;<code>str</code></dt>
+<dd>Row identifier key to check in founded table object.</dd>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>New row data.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>TypeError</code></dt>
+<dd>When the specified row identifier type is not a str.</dd>
+<dt><code>KeyError</code></dt>
+<dd>When the specified row identifier did not exists in table object.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update(self, table, row, **data):
+    &#34;&#34;&#34; Update a specific row in specified table
+
+    Parameters
+    ----------
+    table : str
+        Table name to find in local cache.
+    row : str
+        Row identifier key to check in founded table object.
+    data : dict
+        New row data.
+
+    Raises
+    ------
+    TypeError
+        When the specified row identifier type is not a str.
+    KeyError
+        When the specified row identifier did not exists in table object.
+    &#34;&#34;&#34;
+
+    if type(row) is not str:
+        raise TypeError(f&#34;Row identifier needs to be a str, &#34;
+                        f&#34;not a {type(row).__name__}&#34;)
+
+    table_object = self.__get_table(table)
+
+    if not table_object.has_section(row):
+        raise KeyError(f&#34;Cannot update row &#39;{row}&#39; since this one did not &#34;
+                       f&#34;exists in table &#39;{table}&#39;&#34;)
+
+    for key, value in data.items():
+        table_object.set(row, key, value)
+
+    table_object.write()</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="geode.lib.common.CommonPath" href="../common.html#geode.lib.common.CommonPath">CommonPath</a></b></code>:
+<ul class="hlist">
+<li><code><a title="geode.lib.common.CommonPath.exists" href="../common.html#geode.lib.common.CommonPath.exists">exists</a></code></li>
+<li><code><a title="geode.lib.common.CommonPath.path" href="../common.html#geode.lib.common.CommonPath.path">path</a></code></li>
+<li><code><a title="geode.lib.common.CommonPath.set_path" href="../common.html#geode.lib.common.CommonPath.set_path">set_path</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="geode.lib.database" href="index.html">geode.lib.database</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="geode.lib.database.filesystem.FileSystemDatabase" href="#geode.lib.database.filesystem.FileSystemDatabase">FileSystemDatabase</a></code></h4>
+<ul class="two-column">
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.create_table" href="#geode.lib.database.filesystem.FileSystemDatabase.create_table">create_table</a></code></li>
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.delete" href="#geode.lib.database.filesystem.FileSystemDatabase.delete">delete</a></code></li>
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.drop_table" href="#geode.lib.database.filesystem.FileSystemDatabase.drop_table">drop_table</a></code></li>
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.insert" href="#geode.lib.database.filesystem.FileSystemDatabase.insert">insert</a></code></li>
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.read" href="#geode.lib.database.filesystem.FileSystemDatabase.read">read</a></code></li>
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.rename_table" href="#geode.lib.database.filesystem.FileSystemDatabase.rename_table">rename_table</a></code></li>
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.select" href="#geode.lib.database.filesystem.FileSystemDatabase.select">select</a></code></li>
+<li><code><a title="geode.lib.database.filesystem.FileSystemDatabase.update" href="#geode.lib.database.filesystem.FileSystemDatabase.update">update</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.4</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

@@ -1,0 +1,1688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.4" />
+<title>geode.lib.game API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>geode.lib.game</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># ------------------------------------------------------------------------------
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 3 of the License.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+# ------------------------------------------------------------------------------
+
+# API
+from geode.db import Database
+
+from geode.utils import generate_identifier
+
+from geode.lib.emulator import Emulator
+
+# Datetime
+from datetime import date
+from datetime import datetime
+from datetime import timedelta
+
+# Filesystem
+from os.path import dirname
+from os.path import basename
+from os.path import expanduser
+
+from pathlib import Path
+
+# Regex
+from re import compile as re_compile
+
+# System
+from os import environ
+
+from copy import deepcopy
+
+from shlex import split as shlex_split
+
+from subprocess import Popen
+
+# ------------------------------------------------------------------------------
+#   Modules
+# ------------------------------------------------------------------------------
+
+class Game(object):
+
+    attributes = (
+        (&#34;filename&#34;, None),
+        (&#34;name&#34;, None),
+        (&#34;favorite&#34;, False),
+        (&#34;multiplayer&#34;, False),
+        (&#34;finish&#34;, False),
+        (&#34;score&#34;, int()),
+        (&#34;played&#34;, int()),
+        (&#34;play_time&#34;, timedelta()),
+        (&#34;last_launch_date&#34;, date(1, 1, 1)),
+        (&#34;last_launch_time&#34;, timedelta()),
+        (&#34;emulator&#34;, None),
+        (&#34;arguments&#34;, None),
+        (&#34;gameid&#34;, None),
+        (&#34;tags&#34;, list()),
+        (&#34;cover&#34;, None))
+
+
+    def __init__(self, api, console, filepath):
+        &#34;&#34;&#34; Constructor
+
+        Parameters
+        ----------
+        api : geode.api.API
+            API instance
+        console : geode.lib.console.Console
+            Parent console instance
+        filepath : pathlib.Path
+            Object configuration file
+        &#34;&#34;&#34;
+
+        # ----------------------------------------
+        #   Check api parameters
+        # ----------------------------------------
+
+        if type(api) is None:
+            raise TypeError(&#34;Wrong type for api, expected geode.api.API&#34;)
+
+        self.api = api
+
+        # ----------------------------------------
+        #   Variables
+        # ----------------------------------------
+
+        # Store console instance
+        self.console = console
+
+        # Store an uniq identifier
+        self.id = generate_identifier(filepath)
+
+        # Store full game path
+        self.path = filepath
+
+        # Store game environment keys
+        self.environment = dict()
+
+        # Store game installation date
+        self.installed = datetime.fromtimestamp(filepath.stat().st_ctime).date()
+
+        # Store fullscreen status
+        self.fullscreen = False
+
+        # ----------------------------------------
+        #   Initialization
+        # ----------------------------------------
+
+        # Initialize metadata
+        self.__init_game()
+
+
+    def __init_game(self):
+        &#34;&#34;&#34; Initialize game metadata from database content
+        &#34;&#34;&#34;
+
+        # Retrieve game metadata from database
+        metadata = self.api.get_database().select(&#34;games&#34;, &#34;*&#34;,
+            where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+        # This games owned some data in database
+        if len(metadata) &gt; 0:
+            metadata = metadata[0]
+
+        # ----------------------------------------
+        #   Initialization
+        # ----------------------------------------
+
+        # Retrieve time from a string (HH:MM:SS.MS)
+        regex = re_compile(r&#34;(\d+):(\d+):(\d+)[\.\d*]?&#34;)
+
+        for key, value in self.attributes:
+            index = self.attributes.index((key, value))
+
+            if len(metadata) &gt; 0 and len(metadata) &gt;= index:
+
+                # ----------------------------------------
+                #   Manage specific variable
+                # ----------------------------------------
+
+                if type(value) is bool:
+                    value = bool(metadata[index])
+
+                elif type(value) is int:
+                    value = int(metadata[index])
+
+                elif type(value) is list:
+
+                    if len(metadata[index]) &gt; 0:
+                        value = metadata[index].split(&#39;;&#39;)
+
+                elif type(value) is date:
+
+                    # ISO 8601 format (YYYY-MM-DD)
+                    if len(metadata[index]) == 10:
+                        year, month, day = metadata[index].split(&#39;-&#39;)
+
+                        value = date(int(year), int(month), int(day))
+
+                    # Remove date with an unknown format
+                    else:
+                        value = None
+
+                elif type(value) is timedelta:
+                    result = regex.match(metadata[index])
+
+                    if result is not None:
+                        hours, minutes, seconds = result.groups()
+
+                        value = timedelta(
+                            hours=int(hours),
+                            minutes=int(minutes),
+                            seconds=int(seconds))
+
+                    else:
+                        value = None
+
+                elif len(metadata[index]) &gt; 0:
+                    value = metadata[index]
+
+                # ----------------------------------------
+                #   Manage specific constant
+                # ----------------------------------------
+
+                if type(value) is str and len(value) &gt; 0:
+
+                    if key == &#34;cover&#34;:
+                        value = Path(expanduser(value))
+
+                    elif key == &#34;emulator&#34;:
+                        value = self.api.get_emulator(value)
+
+            # Avoid to have a silly date
+            elif type(value) is date:
+                value = None
+
+            setattr(self, key, value)
+
+        # Check if a name is unavailable
+        if self.name is None or len(self.name) == 0:
+            self.name = self.path.stem
+
+        # ----------------------------------------
+        #   Environment keys
+        # ----------------------------------------
+
+        config = self.api.get_environment()
+
+        if config.has_section(self.id):
+
+            for key, value in config.items(self.id):
+                self.environment[key] = value
+
+
+    def __str__(self):
+        &#34;&#34;&#34; Print object as string
+
+        Returns
+        -------
+        str
+            Formatted object data as string
+        &#34;&#34;&#34;
+
+        return self.id
+
+
+    def __get_contents(self, choice):
+        &#34;&#34;&#34; Retrieve a game folder contents based on an emulator pattern
+
+        Parameters
+        ----------
+        choice : str
+            Emulator pattern attribute (savestate or snapshot)
+
+        Returns
+        -------
+        list
+            Folder contents
+        &#34;&#34;&#34;
+
+        emulator = self.console.emulator
+
+        if self.emulator is not None:
+            emulator = self.emulator
+
+        path = getattr(emulator, choice, None)
+
+        if path is not None:
+            keys = {
+                &#34;rom-name&#34;: self.path.stem,
+                &#34;rom-name-lower&#34;: self.path.stem.lower(),
+                &#34;rom-name-upper&#34;: self.path.stem.upper(),
+                &#34;rom-file&#34;: self.path,
+                &#34;rom-folder&#34;: self.path.parent,
+                &#34;gameid&#34;: self.gameid }
+
+            pattern = str(path)
+
+            # Avoid to manage empty path
+            if len(pattern) &gt; 0:
+
+                for key, value in keys.items():
+                    substring = &#34;&lt;%s&gt;&#34; % str(key)
+
+                    # Avoid to continue if wanted key as no value
+                    if substring in pattern and value is None:
+                        return list()
+
+                    pattern = pattern.replace(substring, str(value))
+
+                # Set a pathlib.Path to allow glob filter
+                folder = Path(dirname(pattern))
+
+                # A glob pattern use brackets to match string, so we replace the
+                # brackets from a filename with a joker to be sure we retrieve
+                # all the corresponding files
+                pattern = basename(pattern).replace(&#39;[&#39;, &#39;?&#39;).replace(&#39;]&#39;, &#39;?&#39;)
+
+                return list(sorted(folder.glob(pattern)))
+
+        return list()
+
+
+    @property
+    def snapshots(self):
+        &#34;&#34;&#34; Retrieve snapshots files list based on emulator pattern
+
+        Returns
+        -------
+        list
+            Snapshots files list
+        &#34;&#34;&#34;
+
+        return self.__get_contents(&#34;snapshot&#34;)
+
+
+    @property
+    def savestates(self):
+        &#34;&#34;&#34; Retrieve savestates files list based on emulator pattern
+
+        Returns
+        -------
+        list
+            Savestate files list
+        &#34;&#34;&#34;
+
+        return self.__get_contents(&#34;savestate&#34;)
+
+
+    @property
+    def command(self):
+        &#34;&#34;&#34; Generate launch command from game metadata
+
+        Returns
+        -------
+        list
+            Generated command as arguments list
+        &#34;&#34;&#34;
+
+        emulator = self.console.emulator
+
+        if self.emulator is not None:
+            emulator = self.emulator
+
+        if not emulator.exists:
+            raise OSError(2, &#34;Cannot found binary: %s&#34; % emulator.binary)
+
+        # ----------------------------------------
+        #   Retrieve default parameters
+        # ----------------------------------------
+
+        arguments = shlex_split(emulator.binary)
+
+        # Retrieve default or specific arguments
+        if self.arguments is not None:
+            arguments.append(self.arguments)
+        elif emulator.default is not None:
+            arguments.append(emulator.default)
+
+        # Retrieve fullscreen mode
+        if self.fullscreen and emulator.fullscreen is not None:
+            arguments.append(emulator.fullscreen)
+        elif not self.fullscreen and emulator.windowed is not None:
+            arguments.append(emulator.windowed)
+
+        # ----------------------------------------
+        #   Replace pattern substitutes
+        # ----------------------------------------
+
+        command = &#39; &#39;.join(arguments).strip()
+
+        need_gamefile = True
+
+        keys = {
+            &#34;configuration&#34;: emulator.configuration,
+            &#34;rom-name&#34;: self.path.stem,
+            &#34;rom-name-lower&#34;: self.path.stem.lower(),
+            &#34;rom-name-upper&#34;: self.path.stem.upper(),
+            &#34;rom-file&#34;: self.path,
+            &#34;rom-folder&#34;: self.path.parent,
+            &#34;gameid&#34;: self.gameid }
+
+        for key, value in keys.items():
+            substring = &#34;&lt;%s&gt;&#34; % key
+
+            if value is not None and substring in command:
+                command = command.replace(substring, str(value))
+
+                if key in (&#34;rom-name&#34;, &#34;rom-file&#34;, &#34;rom-folder&#34;):
+                    need_gamefile = False
+
+        # ----------------------------------------
+        #   Generate subprocess compatible command
+        # ----------------------------------------
+
+        arguments = shlex_split(command)
+
+        if need_gamefile:
+            arguments.append(str(self.path))
+
+        return arguments
+
+
+    def run(self):
+        &#34;&#34;&#34; Launch a game
+
+        This function avoit to save metadata into database to allow
+        multi-threading
+        &#34;&#34;&#34;
+
+        log = self.api.get_storage_path().joinpath(&#34;logs&#34;, &#34;%s.log&#34; % self.id)
+
+        # Generate logs folder if missing
+        if not log.parent.exists():
+            log.parent.mkdir(0o755, True)
+
+        # ----------------------------------------
+        #   Check environment
+        # ----------------------------------------
+
+        emulator = self.console.emulator
+
+        if self.emulator is not None:
+            emulator = self.emulator
+
+        # Get a copy of current environment
+        environment = environ.copy()
+
+        # Check if game emulator has specific environment variable
+        for key, value in emulator.environment.items():
+            environment[key] = value
+
+        # Check if game console has specific environment variable
+        for key, value in self.console.environment.items():
+            environment[key] = value
+
+        # Check if current game has specific environment variable
+        for key, value in self.environment.items():
+            environment[key] = value
+
+        # ----------------------------------------
+        #   Launch game
+        # ----------------------------------------
+
+        # Start game timer
+        started = datetime.now()
+
+        # Open log file to write stdout
+        with open(log, &#39;w&#39;) as pipe:
+
+            # Start game process
+            with Popen(self.command, stdout=pipe, stderr=pipe,
+                env=environment, universal_newlines=True) as self.process:
+
+                self.api.log.info(
+                    &#34;Launch %s with PID %d&#34; % (self.name, self.process.pid))
+                self.api.log.debug(
+                    &#34;Command: %s&#34; % &#39; &#39;.join(self.process.args))
+
+                self.api.log.info(&#34;Log to %s&#34; % str(log))
+
+                # Write into log file until game stop
+                while self.process.stdout is not None:
+                    pipe.write(self.process.stdout.read(1))
+
+        # Stop timer and retrieve delta
+        delta = datetime.now() - started
+
+        self.api.log.info(&#34;Close %s&#34; % self.name)
+
+        # ----------------------------------------
+        #   Update metadata
+        # ----------------------------------------
+
+        self.played += 1
+        self.play_time += delta
+        self.last_launch_date = date.today()
+        self.last_launch_time = delta
+
+
+    def copy(self, filepath):
+        &#34;&#34;&#34; Copy game instance
+
+        Parameters
+        ----------
+        filepath : pathlib.Path
+            Object configuration file
+
+        Returns
+        -------
+        geode.lib.game.Game
+            New game instance
+        &#34;&#34;&#34;
+
+        game = deepcopy(self)
+
+        # Generate a new identifier
+        game.id = generate_identifier(filepath)
+
+        # Retrieve name from filename
+        game.name = filepath.stem
+
+        # Store filepath
+        game.path = filepath
+
+        return game
+
+
+    def save(self):
+        &#34;&#34;&#34; Save game instance to database
+        &#34;&#34;&#34;
+
+        database = self.api.get_database()
+
+        # Retrieve game metadata from database
+        metadata = database.select(&#34;games&#34;, &#34;filename&#34;,
+            where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+        # Generate a dictionary with database scheme format
+        data = dict()
+
+        for key, value in self.attributes:
+            value = getattr(self, key, value)
+
+            # ----------------------------------------
+            #   Manage specific variable
+            # ----------------------------------------
+
+            if value is None:
+                value = str()
+
+            elif type(value) is bool:
+                value = int(value)
+
+            elif type(value) is list:
+                value = &#39;;&#39;.join(value)
+
+            elif type(value) is Path:
+                value = value.name
+
+            elif type(value) is Emulator:
+                value = value.id
+
+            # ----------------------------------------
+            #   Manage specific constant
+            # ----------------------------------------
+
+            if key == &#34;filename&#34;:
+                value = self.path.name
+
+            data[key] = str(value)
+
+        # Update entry from database
+        if len(metadata) &gt; 0:
+            database.update(&#34;games&#34;, data=data,
+                where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+        # Generate a new entry into database
+        else:
+            database.insert(&#34;games&#34;, data=data)
+
+        # ----------------------------------------
+        #   Environment keys
+        # ----------------------------------------
+
+        config = self.api.get_environment()
+
+        if len(self.environment) &gt; 0:
+
+            if not config.has_section(self.id):
+                config.add_section(self.id)
+
+            for key, value in self.environment.items():
+                config.modify(self.id, key, value)
+
+        elif config.has_section(self.id):
+            config.remove_section(self.id)
+
+        config.update()
+
+
+    def delete(self):
+        &#34;&#34;&#34; Delete game instance from database
+        &#34;&#34;&#34;
+
+        database = self.api.get_database()
+
+        database.delete(&#34;games&#34;,
+            where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+
+    def clear_metadata(self):
+        &#34;&#34;&#34; Clear metadata
+        &#34;&#34;&#34;
+
+        for key, value in self.attributes:
+            setattr(self, key, value)
+
+        # Generate a new identifier
+        self.id = generate_identifier(self.path)
+
+        # Retrieve name from filename
+        self.name = self.path.stem
+
+        # Avoid to have a silly date
+        self.last_launch_date = None
+
+
+    def reset_metadata(self):
+        &#34;&#34;&#34; Reset game metadata from database
+        &#34;&#34;&#34;
+
+        self.__init_game()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="geode.lib.game.Game"><code class="flex name class">
+<span>class <span class="ident">Game</span></span>
+<span>(</span><span>api, console, filepath)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Constructor</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>api</code></strong> :&ensp;<a title="geode.api.API" href="../api.html#geode.api.API"><code>API</code></a></dt>
+<dd>API instance</dd>
+<dt><strong><code>console</code></strong> :&ensp;<a title="geode.lib.console.Console" href="console.html#geode.lib.console.Console"><code>Console</code></a></dt>
+<dd>Parent console instance</dd>
+<dt><strong><code>filepath</code></strong> :&ensp;<code>pathlib.Path</code></dt>
+<dd>Object configuration file</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Game(object):
+
+    attributes = (
+        (&#34;filename&#34;, None),
+        (&#34;name&#34;, None),
+        (&#34;favorite&#34;, False),
+        (&#34;multiplayer&#34;, False),
+        (&#34;finish&#34;, False),
+        (&#34;score&#34;, int()),
+        (&#34;played&#34;, int()),
+        (&#34;play_time&#34;, timedelta()),
+        (&#34;last_launch_date&#34;, date(1, 1, 1)),
+        (&#34;last_launch_time&#34;, timedelta()),
+        (&#34;emulator&#34;, None),
+        (&#34;arguments&#34;, None),
+        (&#34;gameid&#34;, None),
+        (&#34;tags&#34;, list()),
+        (&#34;cover&#34;, None))
+
+
+    def __init__(self, api, console, filepath):
+        &#34;&#34;&#34; Constructor
+
+        Parameters
+        ----------
+        api : geode.api.API
+            API instance
+        console : geode.lib.console.Console
+            Parent console instance
+        filepath : pathlib.Path
+            Object configuration file
+        &#34;&#34;&#34;
+
+        # ----------------------------------------
+        #   Check api parameters
+        # ----------------------------------------
+
+        if type(api) is None:
+            raise TypeError(&#34;Wrong type for api, expected geode.api.API&#34;)
+
+        self.api = api
+
+        # ----------------------------------------
+        #   Variables
+        # ----------------------------------------
+
+        # Store console instance
+        self.console = console
+
+        # Store an uniq identifier
+        self.id = generate_identifier(filepath)
+
+        # Store full game path
+        self.path = filepath
+
+        # Store game environment keys
+        self.environment = dict()
+
+        # Store game installation date
+        self.installed = datetime.fromtimestamp(filepath.stat().st_ctime).date()
+
+        # Store fullscreen status
+        self.fullscreen = False
+
+        # ----------------------------------------
+        #   Initialization
+        # ----------------------------------------
+
+        # Initialize metadata
+        self.__init_game()
+
+
+    def __init_game(self):
+        &#34;&#34;&#34; Initialize game metadata from database content
+        &#34;&#34;&#34;
+
+        # Retrieve game metadata from database
+        metadata = self.api.get_database().select(&#34;games&#34;, &#34;*&#34;,
+            where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+        # This games owned some data in database
+        if len(metadata) &gt; 0:
+            metadata = metadata[0]
+
+        # ----------------------------------------
+        #   Initialization
+        # ----------------------------------------
+
+        # Retrieve time from a string (HH:MM:SS.MS)
+        regex = re_compile(r&#34;(\d+):(\d+):(\d+)[\.\d*]?&#34;)
+
+        for key, value in self.attributes:
+            index = self.attributes.index((key, value))
+
+            if len(metadata) &gt; 0 and len(metadata) &gt;= index:
+
+                # ----------------------------------------
+                #   Manage specific variable
+                # ----------------------------------------
+
+                if type(value) is bool:
+                    value = bool(metadata[index])
+
+                elif type(value) is int:
+                    value = int(metadata[index])
+
+                elif type(value) is list:
+
+                    if len(metadata[index]) &gt; 0:
+                        value = metadata[index].split(&#39;;&#39;)
+
+                elif type(value) is date:
+
+                    # ISO 8601 format (YYYY-MM-DD)
+                    if len(metadata[index]) == 10:
+                        year, month, day = metadata[index].split(&#39;-&#39;)
+
+                        value = date(int(year), int(month), int(day))
+
+                    # Remove date with an unknown format
+                    else:
+                        value = None
+
+                elif type(value) is timedelta:
+                    result = regex.match(metadata[index])
+
+                    if result is not None:
+                        hours, minutes, seconds = result.groups()
+
+                        value = timedelta(
+                            hours=int(hours),
+                            minutes=int(minutes),
+                            seconds=int(seconds))
+
+                    else:
+                        value = None
+
+                elif len(metadata[index]) &gt; 0:
+                    value = metadata[index]
+
+                # ----------------------------------------
+                #   Manage specific constant
+                # ----------------------------------------
+
+                if type(value) is str and len(value) &gt; 0:
+
+                    if key == &#34;cover&#34;:
+                        value = Path(expanduser(value))
+
+                    elif key == &#34;emulator&#34;:
+                        value = self.api.get_emulator(value)
+
+            # Avoid to have a silly date
+            elif type(value) is date:
+                value = None
+
+            setattr(self, key, value)
+
+        # Check if a name is unavailable
+        if self.name is None or len(self.name) == 0:
+            self.name = self.path.stem
+
+        # ----------------------------------------
+        #   Environment keys
+        # ----------------------------------------
+
+        config = self.api.get_environment()
+
+        if config.has_section(self.id):
+
+            for key, value in config.items(self.id):
+                self.environment[key] = value
+
+
+    def __str__(self):
+        &#34;&#34;&#34; Print object as string
+
+        Returns
+        -------
+        str
+            Formatted object data as string
+        &#34;&#34;&#34;
+
+        return self.id
+
+
+    def __get_contents(self, choice):
+        &#34;&#34;&#34; Retrieve a game folder contents based on an emulator pattern
+
+        Parameters
+        ----------
+        choice : str
+            Emulator pattern attribute (savestate or snapshot)
+
+        Returns
+        -------
+        list
+            Folder contents
+        &#34;&#34;&#34;
+
+        emulator = self.console.emulator
+
+        if self.emulator is not None:
+            emulator = self.emulator
+
+        path = getattr(emulator, choice, None)
+
+        if path is not None:
+            keys = {
+                &#34;rom-name&#34;: self.path.stem,
+                &#34;rom-name-lower&#34;: self.path.stem.lower(),
+                &#34;rom-name-upper&#34;: self.path.stem.upper(),
+                &#34;rom-file&#34;: self.path,
+                &#34;rom-folder&#34;: self.path.parent,
+                &#34;gameid&#34;: self.gameid }
+
+            pattern = str(path)
+
+            # Avoid to manage empty path
+            if len(pattern) &gt; 0:
+
+                for key, value in keys.items():
+                    substring = &#34;&lt;%s&gt;&#34; % str(key)
+
+                    # Avoid to continue if wanted key as no value
+                    if substring in pattern and value is None:
+                        return list()
+
+                    pattern = pattern.replace(substring, str(value))
+
+                # Set a pathlib.Path to allow glob filter
+                folder = Path(dirname(pattern))
+
+                # A glob pattern use brackets to match string, so we replace the
+                # brackets from a filename with a joker to be sure we retrieve
+                # all the corresponding files
+                pattern = basename(pattern).replace(&#39;[&#39;, &#39;?&#39;).replace(&#39;]&#39;, &#39;?&#39;)
+
+                return list(sorted(folder.glob(pattern)))
+
+        return list()
+
+
+    @property
+    def snapshots(self):
+        &#34;&#34;&#34; Retrieve snapshots files list based on emulator pattern
+
+        Returns
+        -------
+        list
+            Snapshots files list
+        &#34;&#34;&#34;
+
+        return self.__get_contents(&#34;snapshot&#34;)
+
+
+    @property
+    def savestates(self):
+        &#34;&#34;&#34; Retrieve savestates files list based on emulator pattern
+
+        Returns
+        -------
+        list
+            Savestate files list
+        &#34;&#34;&#34;
+
+        return self.__get_contents(&#34;savestate&#34;)
+
+
+    @property
+    def command(self):
+        &#34;&#34;&#34; Generate launch command from game metadata
+
+        Returns
+        -------
+        list
+            Generated command as arguments list
+        &#34;&#34;&#34;
+
+        emulator = self.console.emulator
+
+        if self.emulator is not None:
+            emulator = self.emulator
+
+        if not emulator.exists:
+            raise OSError(2, &#34;Cannot found binary: %s&#34; % emulator.binary)
+
+        # ----------------------------------------
+        #   Retrieve default parameters
+        # ----------------------------------------
+
+        arguments = shlex_split(emulator.binary)
+
+        # Retrieve default or specific arguments
+        if self.arguments is not None:
+            arguments.append(self.arguments)
+        elif emulator.default is not None:
+            arguments.append(emulator.default)
+
+        # Retrieve fullscreen mode
+        if self.fullscreen and emulator.fullscreen is not None:
+            arguments.append(emulator.fullscreen)
+        elif not self.fullscreen and emulator.windowed is not None:
+            arguments.append(emulator.windowed)
+
+        # ----------------------------------------
+        #   Replace pattern substitutes
+        # ----------------------------------------
+
+        command = &#39; &#39;.join(arguments).strip()
+
+        need_gamefile = True
+
+        keys = {
+            &#34;configuration&#34;: emulator.configuration,
+            &#34;rom-name&#34;: self.path.stem,
+            &#34;rom-name-lower&#34;: self.path.stem.lower(),
+            &#34;rom-name-upper&#34;: self.path.stem.upper(),
+            &#34;rom-file&#34;: self.path,
+            &#34;rom-folder&#34;: self.path.parent,
+            &#34;gameid&#34;: self.gameid }
+
+        for key, value in keys.items():
+            substring = &#34;&lt;%s&gt;&#34; % key
+
+            if value is not None and substring in command:
+                command = command.replace(substring, str(value))
+
+                if key in (&#34;rom-name&#34;, &#34;rom-file&#34;, &#34;rom-folder&#34;):
+                    need_gamefile = False
+
+        # ----------------------------------------
+        #   Generate subprocess compatible command
+        # ----------------------------------------
+
+        arguments = shlex_split(command)
+
+        if need_gamefile:
+            arguments.append(str(self.path))
+
+        return arguments
+
+
+    def run(self):
+        &#34;&#34;&#34; Launch a game
+
+        This function avoit to save metadata into database to allow
+        multi-threading
+        &#34;&#34;&#34;
+
+        log = self.api.get_storage_path().joinpath(&#34;logs&#34;, &#34;%s.log&#34; % self.id)
+
+        # Generate logs folder if missing
+        if not log.parent.exists():
+            log.parent.mkdir(0o755, True)
+
+        # ----------------------------------------
+        #   Check environment
+        # ----------------------------------------
+
+        emulator = self.console.emulator
+
+        if self.emulator is not None:
+            emulator = self.emulator
+
+        # Get a copy of current environment
+        environment = environ.copy()
+
+        # Check if game emulator has specific environment variable
+        for key, value in emulator.environment.items():
+            environment[key] = value
+
+        # Check if game console has specific environment variable
+        for key, value in self.console.environment.items():
+            environment[key] = value
+
+        # Check if current game has specific environment variable
+        for key, value in self.environment.items():
+            environment[key] = value
+
+        # ----------------------------------------
+        #   Launch game
+        # ----------------------------------------
+
+        # Start game timer
+        started = datetime.now()
+
+        # Open log file to write stdout
+        with open(log, &#39;w&#39;) as pipe:
+
+            # Start game process
+            with Popen(self.command, stdout=pipe, stderr=pipe,
+                env=environment, universal_newlines=True) as self.process:
+
+                self.api.log.info(
+                    &#34;Launch %s with PID %d&#34; % (self.name, self.process.pid))
+                self.api.log.debug(
+                    &#34;Command: %s&#34; % &#39; &#39;.join(self.process.args))
+
+                self.api.log.info(&#34;Log to %s&#34; % str(log))
+
+                # Write into log file until game stop
+                while self.process.stdout is not None:
+                    pipe.write(self.process.stdout.read(1))
+
+        # Stop timer and retrieve delta
+        delta = datetime.now() - started
+
+        self.api.log.info(&#34;Close %s&#34; % self.name)
+
+        # ----------------------------------------
+        #   Update metadata
+        # ----------------------------------------
+
+        self.played += 1
+        self.play_time += delta
+        self.last_launch_date = date.today()
+        self.last_launch_time = delta
+
+
+    def copy(self, filepath):
+        &#34;&#34;&#34; Copy game instance
+
+        Parameters
+        ----------
+        filepath : pathlib.Path
+            Object configuration file
+
+        Returns
+        -------
+        geode.lib.game.Game
+            New game instance
+        &#34;&#34;&#34;
+
+        game = deepcopy(self)
+
+        # Generate a new identifier
+        game.id = generate_identifier(filepath)
+
+        # Retrieve name from filename
+        game.name = filepath.stem
+
+        # Store filepath
+        game.path = filepath
+
+        return game
+
+
+    def save(self):
+        &#34;&#34;&#34; Save game instance to database
+        &#34;&#34;&#34;
+
+        database = self.api.get_database()
+
+        # Retrieve game metadata from database
+        metadata = database.select(&#34;games&#34;, &#34;filename&#34;,
+            where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+        # Generate a dictionary with database scheme format
+        data = dict()
+
+        for key, value in self.attributes:
+            value = getattr(self, key, value)
+
+            # ----------------------------------------
+            #   Manage specific variable
+            # ----------------------------------------
+
+            if value is None:
+                value = str()
+
+            elif type(value) is bool:
+                value = int(value)
+
+            elif type(value) is list:
+                value = &#39;;&#39;.join(value)
+
+            elif type(value) is Path:
+                value = value.name
+
+            elif type(value) is Emulator:
+                value = value.id
+
+            # ----------------------------------------
+            #   Manage specific constant
+            # ----------------------------------------
+
+            if key == &#34;filename&#34;:
+                value = self.path.name
+
+            data[key] = str(value)
+
+        # Update entry from database
+        if len(metadata) &gt; 0:
+            database.update(&#34;games&#34;, data=data,
+                where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+        # Generate a new entry into database
+        else:
+            database.insert(&#34;games&#34;, data=data)
+
+        # ----------------------------------------
+        #   Environment keys
+        # ----------------------------------------
+
+        config = self.api.get_environment()
+
+        if len(self.environment) &gt; 0:
+
+            if not config.has_section(self.id):
+                config.add_section(self.id)
+
+            for key, value in self.environment.items():
+                config.modify(self.id, key, value)
+
+        elif config.has_section(self.id):
+            config.remove_section(self.id)
+
+        config.update()
+
+
+    def delete(self):
+        &#34;&#34;&#34; Delete game instance from database
+        &#34;&#34;&#34;
+
+        database = self.api.get_database()
+
+        database.delete(&#34;games&#34;,
+            where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+
+    def clear_metadata(self):
+        &#34;&#34;&#34; Clear metadata
+        &#34;&#34;&#34;
+
+        for key, value in self.attributes:
+            setattr(self, key, value)
+
+        # Generate a new identifier
+        self.id = generate_identifier(self.path)
+
+        # Retrieve name from filename
+        self.name = self.path.stem
+
+        # Avoid to have a silly date
+        self.last_launch_date = None
+
+
+    def reset_metadata(self):
+        &#34;&#34;&#34; Reset game metadata from database
+        &#34;&#34;&#34;
+
+        self.__init_game()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="geode.lib.game.Game.attributes"><code class="name">var <span class="ident">attributes</span></code></dt>
+<dd>
+<section class="desc"><p>Built-in immutable sequence.</p>
+<p>If no argument is given, the constructor returns an empty tuple.
+If iterable is specified the tuple is initialized from iterable's items.</p>
+<p>If the argument is a tuple, the return value is the same object.</p></section>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="geode.lib.game.Game.command"><code class="name">var <span class="ident">command</span></code></dt>
+<dd>
+<section class="desc"><p>Generate launch command from game metadata</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Generated command as arguments list</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def command(self):
+    &#34;&#34;&#34; Generate launch command from game metadata
+
+    Returns
+    -------
+    list
+        Generated command as arguments list
+    &#34;&#34;&#34;
+
+    emulator = self.console.emulator
+
+    if self.emulator is not None:
+        emulator = self.emulator
+
+    if not emulator.exists:
+        raise OSError(2, &#34;Cannot found binary: %s&#34; % emulator.binary)
+
+    # ----------------------------------------
+    #   Retrieve default parameters
+    # ----------------------------------------
+
+    arguments = shlex_split(emulator.binary)
+
+    # Retrieve default or specific arguments
+    if self.arguments is not None:
+        arguments.append(self.arguments)
+    elif emulator.default is not None:
+        arguments.append(emulator.default)
+
+    # Retrieve fullscreen mode
+    if self.fullscreen and emulator.fullscreen is not None:
+        arguments.append(emulator.fullscreen)
+    elif not self.fullscreen and emulator.windowed is not None:
+        arguments.append(emulator.windowed)
+
+    # ----------------------------------------
+    #   Replace pattern substitutes
+    # ----------------------------------------
+
+    command = &#39; &#39;.join(arguments).strip()
+
+    need_gamefile = True
+
+    keys = {
+        &#34;configuration&#34;: emulator.configuration,
+        &#34;rom-name&#34;: self.path.stem,
+        &#34;rom-name-lower&#34;: self.path.stem.lower(),
+        &#34;rom-name-upper&#34;: self.path.stem.upper(),
+        &#34;rom-file&#34;: self.path,
+        &#34;rom-folder&#34;: self.path.parent,
+        &#34;gameid&#34;: self.gameid }
+
+    for key, value in keys.items():
+        substring = &#34;&lt;%s&gt;&#34; % key
+
+        if value is not None and substring in command:
+            command = command.replace(substring, str(value))
+
+            if key in (&#34;rom-name&#34;, &#34;rom-file&#34;, &#34;rom-folder&#34;):
+                need_gamefile = False
+
+    # ----------------------------------------
+    #   Generate subprocess compatible command
+    # ----------------------------------------
+
+    arguments = shlex_split(command)
+
+    if need_gamefile:
+        arguments.append(str(self.path))
+
+    return arguments</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.game.Game.savestates"><code class="name">var <span class="ident">savestates</span></code></dt>
+<dd>
+<section class="desc"><p>Retrieve savestates files list based on emulator pattern</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Savestate files list</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def savestates(self):
+    &#34;&#34;&#34; Retrieve savestates files list based on emulator pattern
+
+    Returns
+    -------
+    list
+        Savestate files list
+    &#34;&#34;&#34;
+
+    return self.__get_contents(&#34;savestate&#34;)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.game.Game.snapshots"><code class="name">var <span class="ident">snapshots</span></code></dt>
+<dd>
+<section class="desc"><p>Retrieve snapshots files list based on emulator pattern</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Snapshots files list</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def snapshots(self):
+    &#34;&#34;&#34; Retrieve snapshots files list based on emulator pattern
+
+    Returns
+    -------
+    list
+        Snapshots files list
+    &#34;&#34;&#34;
+
+    return self.__get_contents(&#34;snapshot&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="geode.lib.game.Game.clear_metadata"><code class="name flex">
+<span>def <span class="ident">clear_metadata</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Clear metadata</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clear_metadata(self):
+    &#34;&#34;&#34; Clear metadata
+    &#34;&#34;&#34;
+
+    for key, value in self.attributes:
+        setattr(self, key, value)
+
+    # Generate a new identifier
+    self.id = generate_identifier(self.path)
+
+    # Retrieve name from filename
+    self.name = self.path.stem
+
+    # Avoid to have a silly date
+    self.last_launch_date = None</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.game.Game.copy"><code class="name flex">
+<span>def <span class="ident">copy</span></span>(<span>self, filepath)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Copy game instance</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>filepath</code></strong> :&ensp;<code>pathlib.Path</code></dt>
+<dd>Object configuration file</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><a title="geode.lib.game.Game" href="#geode.lib.game.Game"><code>Game</code></a></dt>
+<dd>New game instance</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def copy(self, filepath):
+    &#34;&#34;&#34; Copy game instance
+
+    Parameters
+    ----------
+    filepath : pathlib.Path
+        Object configuration file
+
+    Returns
+    -------
+    geode.lib.game.Game
+        New game instance
+    &#34;&#34;&#34;
+
+    game = deepcopy(self)
+
+    # Generate a new identifier
+    game.id = generate_identifier(filepath)
+
+    # Retrieve name from filename
+    game.name = filepath.stem
+
+    # Store filepath
+    game.path = filepath
+
+    return game</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.game.Game.delete"><code class="name flex">
+<span>def <span class="ident">delete</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Delete game instance from database</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete(self):
+    &#34;&#34;&#34; Delete game instance from database
+    &#34;&#34;&#34;
+
+    database = self.api.get_database()
+
+    database.delete(&#34;games&#34;,
+        where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.game.Game.reset_metadata"><code class="name flex">
+<span>def <span class="ident">reset_metadata</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Reset game metadata from database</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset_metadata(self):
+    &#34;&#34;&#34; Reset game metadata from database
+    &#34;&#34;&#34;
+
+    self.__init_game()</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.game.Game.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Launch a game</p>
+<p>This function avoit to save metadata into database to allow
+multi-threading</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34; Launch a game
+
+    This function avoit to save metadata into database to allow
+    multi-threading
+    &#34;&#34;&#34;
+
+    log = self.api.get_storage_path().joinpath(&#34;logs&#34;, &#34;%s.log&#34; % self.id)
+
+    # Generate logs folder if missing
+    if not log.parent.exists():
+        log.parent.mkdir(0o755, True)
+
+    # ----------------------------------------
+    #   Check environment
+    # ----------------------------------------
+
+    emulator = self.console.emulator
+
+    if self.emulator is not None:
+        emulator = self.emulator
+
+    # Get a copy of current environment
+    environment = environ.copy()
+
+    # Check if game emulator has specific environment variable
+    for key, value in emulator.environment.items():
+        environment[key] = value
+
+    # Check if game console has specific environment variable
+    for key, value in self.console.environment.items():
+        environment[key] = value
+
+    # Check if current game has specific environment variable
+    for key, value in self.environment.items():
+        environment[key] = value
+
+    # ----------------------------------------
+    #   Launch game
+    # ----------------------------------------
+
+    # Start game timer
+    started = datetime.now()
+
+    # Open log file to write stdout
+    with open(log, &#39;w&#39;) as pipe:
+
+        # Start game process
+        with Popen(self.command, stdout=pipe, stderr=pipe,
+            env=environment, universal_newlines=True) as self.process:
+
+            self.api.log.info(
+                &#34;Launch %s with PID %d&#34; % (self.name, self.process.pid))
+            self.api.log.debug(
+                &#34;Command: %s&#34; % &#39; &#39;.join(self.process.args))
+
+            self.api.log.info(&#34;Log to %s&#34; % str(log))
+
+            # Write into log file until game stop
+            while self.process.stdout is not None:
+                pipe.write(self.process.stdout.read(1))
+
+    # Stop timer and retrieve delta
+    delta = datetime.now() - started
+
+    self.api.log.info(&#34;Close %s&#34; % self.name)
+
+    # ----------------------------------------
+    #   Update metadata
+    # ----------------------------------------
+
+    self.played += 1
+    self.play_time += delta
+    self.last_launch_date = date.today()
+    self.last_launch_time = delta</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.game.Game.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Save game instance to database</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save(self):
+    &#34;&#34;&#34; Save game instance to database
+    &#34;&#34;&#34;
+
+    database = self.api.get_database()
+
+    # Retrieve game metadata from database
+    metadata = database.select(&#34;games&#34;, &#34;filename&#34;,
+        where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+    # Generate a dictionary with database scheme format
+    data = dict()
+
+    for key, value in self.attributes:
+        value = getattr(self, key, value)
+
+        # ----------------------------------------
+        #   Manage specific variable
+        # ----------------------------------------
+
+        if value is None:
+            value = str()
+
+        elif type(value) is bool:
+            value = int(value)
+
+        elif type(value) is list:
+            value = &#39;;&#39;.join(value)
+
+        elif type(value) is Path:
+            value = value.name
+
+        elif type(value) is Emulator:
+            value = value.id
+
+        # ----------------------------------------
+        #   Manage specific constant
+        # ----------------------------------------
+
+        if key == &#34;filename&#34;:
+            value = self.path.name
+
+        data[key] = str(value)
+
+    # Update entry from database
+    if len(metadata) &gt; 0:
+        database.update(&#34;games&#34;, data=data,
+            where=[(&#34;filename&#34;, Database.Condition.EQUAL, self.path.name)])
+
+    # Generate a new entry into database
+    else:
+        database.insert(&#34;games&#34;, data=data)
+
+    # ----------------------------------------
+    #   Environment keys
+    # ----------------------------------------
+
+    config = self.api.get_environment()
+
+    if len(self.environment) &gt; 0:
+
+        if not config.has_section(self.id):
+            config.add_section(self.id)
+
+        for key, value in self.environment.items():
+            config.modify(self.id, key, value)
+
+    elif config.has_section(self.id):
+        config.remove_section(self.id)
+
+    config.update()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="geode.lib" href="index.html">geode.lib</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="geode.lib.game.Game" href="#geode.lib.game.Game">Game</a></code></h4>
+<ul class="two-column">
+<li><code><a title="geode.lib.game.Game.attributes" href="#geode.lib.game.Game.attributes">attributes</a></code></li>
+<li><code><a title="geode.lib.game.Game.clear_metadata" href="#geode.lib.game.Game.clear_metadata">clear_metadata</a></code></li>
+<li><code><a title="geode.lib.game.Game.command" href="#geode.lib.game.Game.command">command</a></code></li>
+<li><code><a title="geode.lib.game.Game.copy" href="#geode.lib.game.Game.copy">copy</a></code></li>
+<li><code><a title="geode.lib.game.Game.delete" href="#geode.lib.game.Game.delete">delete</a></code></li>
+<li><code><a title="geode.lib.game.Game.reset_metadata" href="#geode.lib.game.Game.reset_metadata">reset_metadata</a></code></li>
+<li><code><a title="geode.lib.game.Game.run" href="#geode.lib.game.Game.run">run</a></code></li>
+<li><code><a title="geode.lib.game.Game.save" href="#geode.lib.game.Game.save">save</a></code></li>
+<li><code><a title="geode.lib.game.Game.savestates" href="#geode.lib.game.Game.savestates">savestates</a></code></li>
+<li><code><a title="geode.lib.game.Game.snapshots" href="#geode.lib.game.Game.snapshots">snapshots</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.4</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

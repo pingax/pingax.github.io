@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.4" />
+<title>geode.lib.database.sqlite API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>geode.lib.database.sqlite</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># ------------------------------------------------------------------------------
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 3 of the License.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+# ------------------------------------------------------------------------------
+
+# Database
+import sqlite3 as sqlite
+
+# Geode
+from geode.lib.common import CommonPath
+from geode.lib.utils import escape_request
+
+
+# ------------------------------------------------------------------------------
+#   Class
+# ------------------------------------------------------------------------------
+
+class SqliteDatabase(CommonPath):
+
+    class Type(object):
+        CREATE = 0
+        ALTER = 1
+        DROP = 2
+        SELECT = 3
+        INSERT = 4
+        UPDATE = 5
+        DELETE = 6
+
+    def __init__(self, path=None):
+        &#34;&#34;&#34; Constructor
+
+        Using None as parameter allow to use the sqlite memory backend
+
+        Parameters
+        ----------
+        path : str, optional
+            Database file path (Default: None)
+        &#34;&#34;&#34;
+
+        CommonPath.__init__(self, path)
+
+        self.__connection = None
+
+    def __del__(self):
+        &#34;&#34;&#34; Close database instance when object is deleted
+        &#34;&#34;&#34;
+
+        if self.is_connected:
+            self.__connection.close()
+
+    def __execute(self, request_type, request, *args):
+        &#34;&#34;&#34; Execute a specific SQL request
+
+        Parameters
+        ----------
+        request_type : geode.lib.database.SqliteDatabase.Type
+            Request type, used to manage results
+        request : str
+            SQL request string
+
+        Returns
+        -------
+        tuple
+            if request_type is SELECT and some results are available
+
+        Raises
+        ------
+        SystemError
+            when method is called without database connection
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        if sqlite.complete_statement(request):
+
+            try:
+                self.__cursor.execute(request, args)
+
+                if request_type == SqliteDatabase.Type.SELECT:
+                    return self.__cursor.fetchall() or None
+
+                elif self.__connection.in_transaction:
+                    self.__connection.commit()
+
+            except sqlite.OperationalError as error:
+                raise SystemError(error)
+
+            except sqlite.IntegrityError as error:
+
+                if request_type == SqliteDatabase.Type.INSERT:
+                    raise IndexError(error)
+
+                raise ValueError(error)
+
+    @property
+    def is_connected(self):
+        &#34;&#34;&#34; Retrieve database connection status
+
+        Returns
+        -------
+        bool
+            True if database is connected, False otherwise
+        &#34;&#34;&#34;
+
+        return self.__connection is not None
+
+    def connect(self):
+        &#34;&#34;&#34; Start database connection
+
+        This function generate a new sqlite database at self.path position on
+        filesystem.
+
+        If self.path is None, database use memory backend.
+
+        Raises
+        ------
+        SystemError
+            when a connection already exists
+        &#34;&#34;&#34;
+
+        if self.is_connected:
+            raise SystemError(&#34;Database already connected&#34;)
+
+        connection_type = &#34;:memory:&#34;
+
+        if self.path is not None:
+            connection_type = self.path
+
+        self.__connection = sqlite.connect(str(connection_type))
+
+        self.__cursor = self.__connection.cursor()
+
+    def alter_table(self, table, **kwargs):
+        &#34;&#34;&#34; Alter a database table
+
+        This function allow to alter table with two modes : rename and
+        add_column. These two functions can be used together, but the rename is
+        launched before the add_column.
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        rename : str
+            New table name
+        add_column : str
+            New column name and attribute to add
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;ALTER TABLE \&#34;{table}\&#34;&#34;
+
+        if &#34;rename&#34; in kwargs.keys():
+            request += f&#34; RENAME TO \&#34;{kwargs.get(&#39;rename&#39;)}\&#34;;&#34;
+
+        if &#34;add_column&#34; in kwargs.keys():
+            request += f&#34; ADD COLUMN \&#34;{kwargs.get(&#39;add_column&#39;)}\&#34;;&#34;
+
+        self.__execute(SqliteDatabase.Type.ALTER, request)
+
+    def create_table(self, table, *args):
+        &#34;&#34;&#34; Create a new table in database
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        *args : (str,)
+            Table columns strings
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;CREATE TABLE \&#34;{table}\&#34; ({&#39;,&#39;.join(args)});&#34;
+
+        self.__execute(SqliteDatabase.Type.CREATE, request)
+
+    def drop_table(self, table, if_exists=True):
+        &#34;&#34;&#34; Drop a specific table from database
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        if_exists : bool, optional
+            Raises an error if False, nothing otherwise (Default: True)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;DROP TABLE {&#39;IF EXISTS &#39; if if_exists else &#39;&#39;}{table};&#34;
+
+        self.__execute(SqliteDatabase.Type.DROP, request)
+
+    def pragma_table(self, table):
+        &#34;&#34;&#34; Execute specific function on a specific table
+
+        Parameters
+        ----------
+        table : str
+            Table name
+
+        Returns
+        -------
+        tuple
+            Request results
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;PRAGMA table_info(\&#34;{table}\&#34;);&#34;
+
+        return self.__execute(SqliteDatabase.Type.SELECT, request)
+
+    def delete(self, table, where=None):
+        &#34;&#34;&#34; Delete rows from a specific table
+
+        Without the where condition, this function erase all the data from the
+        specified table.
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        where : list(str,), optional
+            Conditional arguments to filter request (Default: None)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;DELETE FROM \&#34;{table}\&#34;&#34;
+
+        if where is not None:
+
+            if type(where) is list:
+                where = &#34; AND &#34;.join(where)
+
+            request += f&#34; WHERE {where}&#34;
+
+        request += &#39;;&#39;
+
+        self.__execute(SqliteDatabase.Type.DELETE, request)
+
+    def select(self, table, *args, where=None):
+        &#34;&#34;&#34; Retrieve information from specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        args : tuple(str,)
+            Columns to retrieve from specified table
+        where : list(str,), optional
+            Conditional arguments to filter request (Default: None)
+
+        Returns
+        -------
+        list
+            Found rows
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;SELECT {escape_request(*args)} FROM \&#34;{table}\&#34;&#34;
+
+        if where is not None:
+
+            if type(where) is list:
+                where = &#34; AND &#34;.join(where)
+
+            request += f&#34; WHERE {where}&#34;
+
+        request += &#39;;&#39;
+
+        return self.__execute(SqliteDatabase.Type.SELECT, request)
+
+    def insert(self, table, **kwargs):
+        &#34;&#34;&#34; Insert a new row in specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        kwargs : dict(str: str,)
+            Values to insert with column as key
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        AttributeError
+            when values to insert are missing from arguments
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        if not kwargs:
+            raise AttributeError(&#34;No argument available to manage request&#34;)
+
+        keys = escape_request(*kwargs.keys())
+
+        values = &#39;,&#39;.join([&#39;?&#39;] * len(kwargs))
+
+        request = f&#34;INSERT INTO \&#34;{table}\&#34; ({keys}) VALUES ({values});&#34;
+
+        self.__execute(
+            SqliteDatabase.Type.INSERT, request, *kwargs.values())
+
+    def update(self, table, where=None, **kwargs):
+        &#34;&#34;&#34; Update data from table for a specific row
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        kwargs : dict(str: str,)
+            Values to update with column as key
+        where : list(str,), optional
+            Conditional arguments to filter request (Default: None)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        AttributeError
+            when values to update are missing from arguments
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        if not kwargs:
+            raise AttributeError(&#34;No argument available to manage request&#34;)
+
+        request = f&#34;UPDATE \&#34;{table}\&#34; SET {escape_request(**kwargs)}&#34;
+
+        if where is not None:
+
+            if type(where) is list:
+                where = &#34; AND &#34;.join(where)
+
+            request += f&#34; WHERE {where}&#34;
+
+        request += &#39;;&#39;
+
+        self.__execute(SqliteDatabase.Type.UPDATE, request)
+
+    def set_progress_handler(self, handler, step=1):
+        &#34;&#34;&#34; Set a progress handler for database requests
+
+        Parameters
+        ----------
+        handler : builtin_function_or_method
+            Function to call every updated step
+        step : int, optional
+            Step to wait between each update (Default: 1)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        self.__connection.set_progress_handler(handler, step)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="geode.lib.database.sqlite.SqliteDatabase"><code class="flex name class">
+<span>class <span class="ident">SqliteDatabase</span></span>
+<span>(</span><span>path=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Constructor</p>
+<p>Using None as parameter allow to use the sqlite memory backend</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Database file path (Default: None)</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SqliteDatabase(CommonPath):
+
+    class Type(object):
+        CREATE = 0
+        ALTER = 1
+        DROP = 2
+        SELECT = 3
+        INSERT = 4
+        UPDATE = 5
+        DELETE = 6
+
+    def __init__(self, path=None):
+        &#34;&#34;&#34; Constructor
+
+        Using None as parameter allow to use the sqlite memory backend
+
+        Parameters
+        ----------
+        path : str, optional
+            Database file path (Default: None)
+        &#34;&#34;&#34;
+
+        CommonPath.__init__(self, path)
+
+        self.__connection = None
+
+    def __del__(self):
+        &#34;&#34;&#34; Close database instance when object is deleted
+        &#34;&#34;&#34;
+
+        if self.is_connected:
+            self.__connection.close()
+
+    def __execute(self, request_type, request, *args):
+        &#34;&#34;&#34; Execute a specific SQL request
+
+        Parameters
+        ----------
+        request_type : geode.lib.database.SqliteDatabase.Type
+            Request type, used to manage results
+        request : str
+            SQL request string
+
+        Returns
+        -------
+        tuple
+            if request_type is SELECT and some results are available
+
+        Raises
+        ------
+        SystemError
+            when method is called without database connection
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        if sqlite.complete_statement(request):
+
+            try:
+                self.__cursor.execute(request, args)
+
+                if request_type == SqliteDatabase.Type.SELECT:
+                    return self.__cursor.fetchall() or None
+
+                elif self.__connection.in_transaction:
+                    self.__connection.commit()
+
+            except sqlite.OperationalError as error:
+                raise SystemError(error)
+
+            except sqlite.IntegrityError as error:
+
+                if request_type == SqliteDatabase.Type.INSERT:
+                    raise IndexError(error)
+
+                raise ValueError(error)
+
+    @property
+    def is_connected(self):
+        &#34;&#34;&#34; Retrieve database connection status
+
+        Returns
+        -------
+        bool
+            True if database is connected, False otherwise
+        &#34;&#34;&#34;
+
+        return self.__connection is not None
+
+    def connect(self):
+        &#34;&#34;&#34; Start database connection
+
+        This function generate a new sqlite database at self.path position on
+        filesystem.
+
+        If self.path is None, database use memory backend.
+
+        Raises
+        ------
+        SystemError
+            when a connection already exists
+        &#34;&#34;&#34;
+
+        if self.is_connected:
+            raise SystemError(&#34;Database already connected&#34;)
+
+        connection_type = &#34;:memory:&#34;
+
+        if self.path is not None:
+            connection_type = self.path
+
+        self.__connection = sqlite.connect(str(connection_type))
+
+        self.__cursor = self.__connection.cursor()
+
+    def alter_table(self, table, **kwargs):
+        &#34;&#34;&#34; Alter a database table
+
+        This function allow to alter table with two modes : rename and
+        add_column. These two functions can be used together, but the rename is
+        launched before the add_column.
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        rename : str
+            New table name
+        add_column : str
+            New column name and attribute to add
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;ALTER TABLE \&#34;{table}\&#34;&#34;
+
+        if &#34;rename&#34; in kwargs.keys():
+            request += f&#34; RENAME TO \&#34;{kwargs.get(&#39;rename&#39;)}\&#34;;&#34;
+
+        if &#34;add_column&#34; in kwargs.keys():
+            request += f&#34; ADD COLUMN \&#34;{kwargs.get(&#39;add_column&#39;)}\&#34;;&#34;
+
+        self.__execute(SqliteDatabase.Type.ALTER, request)
+
+    def create_table(self, table, *args):
+        &#34;&#34;&#34; Create a new table in database
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        *args : (str,)
+            Table columns strings
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;CREATE TABLE \&#34;{table}\&#34; ({&#39;,&#39;.join(args)});&#34;
+
+        self.__execute(SqliteDatabase.Type.CREATE, request)
+
+    def drop_table(self, table, if_exists=True):
+        &#34;&#34;&#34; Drop a specific table from database
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        if_exists : bool, optional
+            Raises an error if False, nothing otherwise (Default: True)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;DROP TABLE {&#39;IF EXISTS &#39; if if_exists else &#39;&#39;}{table};&#34;
+
+        self.__execute(SqliteDatabase.Type.DROP, request)
+
+    def pragma_table(self, table):
+        &#34;&#34;&#34; Execute specific function on a specific table
+
+        Parameters
+        ----------
+        table : str
+            Table name
+
+        Returns
+        -------
+        tuple
+            Request results
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;PRAGMA table_info(\&#34;{table}\&#34;);&#34;
+
+        return self.__execute(SqliteDatabase.Type.SELECT, request)
+
+    def delete(self, table, where=None):
+        &#34;&#34;&#34; Delete rows from a specific table
+
+        Without the where condition, this function erase all the data from the
+        specified table.
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        where : list(str,), optional
+            Conditional arguments to filter request (Default: None)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;DELETE FROM \&#34;{table}\&#34;&#34;
+
+        if where is not None:
+
+            if type(where) is list:
+                where = &#34; AND &#34;.join(where)
+
+            request += f&#34; WHERE {where}&#34;
+
+        request += &#39;;&#39;
+
+        self.__execute(SqliteDatabase.Type.DELETE, request)
+
+    def select(self, table, *args, where=None):
+        &#34;&#34;&#34; Retrieve information from specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        args : tuple(str,)
+            Columns to retrieve from specified table
+        where : list(str,), optional
+            Conditional arguments to filter request (Default: None)
+
+        Returns
+        -------
+        list
+            Found rows
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        request = f&#34;SELECT {escape_request(*args)} FROM \&#34;{table}\&#34;&#34;
+
+        if where is not None:
+
+            if type(where) is list:
+                where = &#34; AND &#34;.join(where)
+
+            request += f&#34; WHERE {where}&#34;
+
+        request += &#39;;&#39;
+
+        return self.__execute(SqliteDatabase.Type.SELECT, request)
+
+    def insert(self, table, **kwargs):
+        &#34;&#34;&#34; Insert a new row in specified table
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        kwargs : dict(str: str,)
+            Values to insert with column as key
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        AttributeError
+            when values to insert are missing from arguments
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        if not kwargs:
+            raise AttributeError(&#34;No argument available to manage request&#34;)
+
+        keys = escape_request(*kwargs.keys())
+
+        values = &#39;,&#39;.join([&#39;?&#39;] * len(kwargs))
+
+        request = f&#34;INSERT INTO \&#34;{table}\&#34; ({keys}) VALUES ({values});&#34;
+
+        self.__execute(
+            SqliteDatabase.Type.INSERT, request, *kwargs.values())
+
+    def update(self, table, where=None, **kwargs):
+        &#34;&#34;&#34; Update data from table for a specific row
+
+        Parameters
+        ----------
+        table : str
+            Table name
+        kwargs : dict(str: str,)
+            Values to update with column as key
+        where : list(str,), optional
+            Conditional arguments to filter request (Default: None)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        AttributeError
+            when values to update are missing from arguments
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        if not kwargs:
+            raise AttributeError(&#34;No argument available to manage request&#34;)
+
+        request = f&#34;UPDATE \&#34;{table}\&#34; SET {escape_request(**kwargs)}&#34;
+
+        if where is not None:
+
+            if type(where) is list:
+                where = &#34; AND &#34;.join(where)
+
+            request += f&#34; WHERE {where}&#34;
+
+        request += &#39;;&#39;
+
+        self.__execute(SqliteDatabase.Type.UPDATE, request)
+
+    def set_progress_handler(self, handler, step=1):
+        &#34;&#34;&#34; Set a progress handler for database requests
+
+        Parameters
+        ----------
+        handler : builtin_function_or_method
+            Function to call every updated step
+        step : int, optional
+            Step to wait between each update (Default: 1)
+
+        Raises
+        ------
+        SystemError
+            when database connection is not etablish
+        &#34;&#34;&#34;
+
+        if self.__connection is None:
+            raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+        self.__connection.set_progress_handler(handler, step)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="geode.lib.common.CommonPath" href="../common.html#geode.lib.common.CommonPath">CommonPath</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.Type"><code class="name">var <span class="ident">Type</span></code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Type(object):
+    CREATE = 0
+    ALTER = 1
+    DROP = 2
+    SELECT = 3
+    INSERT = 4
+    UPDATE = 5
+    DELETE = 6</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.is_connected"><code class="name">var <span class="ident">is_connected</span></code></dt>
+<dd>
+<section class="desc"><p>Retrieve database connection status</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True if database is connected, False otherwise</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_connected(self):
+    &#34;&#34;&#34; Retrieve database connection status
+
+    Returns
+    -------
+    bool
+        True if database is connected, False otherwise
+    &#34;&#34;&#34;
+
+    return self.__connection is not None</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.alter_table"><code class="name flex">
+<span>def <span class="ident">alter_table</span></span>(<span>self, table, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Alter a database table</p>
+<p>This function allow to alter table with two modes : rename and
+add_column. These two functions can be used together, but the rename is
+launched before the add_column.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+<dt><strong><code>rename</code></strong> :&ensp;<code>str</code></dt>
+<dd>New table name</dd>
+<dt><strong><code>add_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>New column name and attribute to add</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def alter_table(self, table, **kwargs):
+    &#34;&#34;&#34; Alter a database table
+
+    This function allow to alter table with two modes : rename and
+    add_column. These two functions can be used together, but the rename is
+    launched before the add_column.
+
+    Parameters
+    ----------
+    table : str
+        Table name
+    rename : str
+        New table name
+    add_column : str
+        New column name and attribute to add
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    request = f&#34;ALTER TABLE \&#34;{table}\&#34;&#34;
+
+    if &#34;rename&#34; in kwargs.keys():
+        request += f&#34; RENAME TO \&#34;{kwargs.get(&#39;rename&#39;)}\&#34;;&#34;
+
+    if &#34;add_column&#34; in kwargs.keys():
+        request += f&#34; ADD COLUMN \&#34;{kwargs.get(&#39;add_column&#39;)}\&#34;;&#34;
+
+    self.__execute(SqliteDatabase.Type.ALTER, request)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.connect"><code class="name flex">
+<span>def <span class="ident">connect</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Start database connection</p>
+<p>This function generate a new sqlite database at self.path position on
+filesystem.</p>
+<p>If self.path is None, database use memory backend.</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when a connection already exists</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def connect(self):
+    &#34;&#34;&#34; Start database connection
+
+    This function generate a new sqlite database at self.path position on
+    filesystem.
+
+    If self.path is None, database use memory backend.
+
+    Raises
+    ------
+    SystemError
+        when a connection already exists
+    &#34;&#34;&#34;
+
+    if self.is_connected:
+        raise SystemError(&#34;Database already connected&#34;)
+
+    connection_type = &#34;:memory:&#34;
+
+    if self.path is not None:
+        connection_type = self.path
+
+    self.__connection = sqlite.connect(str(connection_type))
+
+    self.__cursor = self.__connection.cursor()</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.create_table"><code class="name flex">
+<span>def <span class="ident">create_table</span></span>(<span>self, table, *args)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Create a new table in database</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+<dt><strong><code>*args</code></strong> :&ensp;(<code>str</code>,)</dt>
+<dd>Table columns strings</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table(self, table, *args):
+    &#34;&#34;&#34; Create a new table in database
+
+    Parameters
+    ----------
+    table : str
+        Table name
+    *args : (str,)
+        Table columns strings
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    request = f&#34;CREATE TABLE \&#34;{table}\&#34; ({&#39;,&#39;.join(args)});&#34;
+
+    self.__execute(SqliteDatabase.Type.CREATE, request)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.delete"><code class="name flex">
+<span>def <span class="ident">delete</span></span>(<span>self, table, where=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Delete rows from a specific table</p>
+<p>Without the where condition, this function erase all the data from the
+specified table.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+<dt><strong><code>where</code></strong> :&ensp;<code>list</code>(<code>str</code>,), optional</dt>
+<dd>Conditional arguments to filter request (Default: None)</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete(self, table, where=None):
+    &#34;&#34;&#34; Delete rows from a specific table
+
+    Without the where condition, this function erase all the data from the
+    specified table.
+
+    Parameters
+    ----------
+    table : str
+        Table name
+    where : list(str,), optional
+        Conditional arguments to filter request (Default: None)
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    request = f&#34;DELETE FROM \&#34;{table}\&#34;&#34;
+
+    if where is not None:
+
+        if type(where) is list:
+            where = &#34; AND &#34;.join(where)
+
+        request += f&#34; WHERE {where}&#34;
+
+    request += &#39;;&#39;
+
+    self.__execute(SqliteDatabase.Type.DELETE, request)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.drop_table"><code class="name flex">
+<span>def <span class="ident">drop_table</span></span>(<span>self, table, if_exists=True)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Drop a specific table from database</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+<dt><strong><code>if_exists</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Raises an error if False, nothing otherwise (Default: True)</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drop_table(self, table, if_exists=True):
+    &#34;&#34;&#34; Drop a specific table from database
+
+    Parameters
+    ----------
+    table : str
+        Table name
+    if_exists : bool, optional
+        Raises an error if False, nothing otherwise (Default: True)
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    request = f&#34;DROP TABLE {&#39;IF EXISTS &#39; if if_exists else &#39;&#39;}{table};&#34;
+
+    self.__execute(SqliteDatabase.Type.DROP, request)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.insert"><code class="name flex">
+<span>def <span class="ident">insert</span></span>(<span>self, table, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Insert a new row in specified table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+<dt><strong><code>kwargs</code></strong> :&ensp;<code>dict</code>(<code>str</code>: <code>str</code>,)</dt>
+<dd>Values to insert with column as key</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+<dt><code>AttributeError</code></dt>
+<dd>when values to insert are missing from arguments</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert(self, table, **kwargs):
+    &#34;&#34;&#34; Insert a new row in specified table
+
+    Parameters
+    ----------
+    table : str
+        Table name
+    kwargs : dict(str: str,)
+        Values to insert with column as key
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    AttributeError
+        when values to insert are missing from arguments
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    if not kwargs:
+        raise AttributeError(&#34;No argument available to manage request&#34;)
+
+    keys = escape_request(*kwargs.keys())
+
+    values = &#39;,&#39;.join([&#39;?&#39;] * len(kwargs))
+
+    request = f&#34;INSERT INTO \&#34;{table}\&#34; ({keys}) VALUES ({values});&#34;
+
+    self.__execute(
+        SqliteDatabase.Type.INSERT, request, *kwargs.values())</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.pragma_table"><code class="name flex">
+<span>def <span class="ident">pragma_table</span></span>(<span>self, table)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Execute specific function on a specific table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple</code></dt>
+<dd>Request results</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pragma_table(self, table):
+    &#34;&#34;&#34; Execute specific function on a specific table
+
+    Parameters
+    ----------
+    table : str
+        Table name
+
+    Returns
+    -------
+    tuple
+        Request results
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    request = f&#34;PRAGMA table_info(\&#34;{table}\&#34;);&#34;
+
+    return self.__execute(SqliteDatabase.Type.SELECT, request)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.select"><code class="name flex">
+<span>def <span class="ident">select</span></span>(<span>self, table, *args, where=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Retrieve information from specified table</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+<dt><strong><code>args</code></strong> :&ensp;<code>tuple</code>(<code>str</code>,)</dt>
+<dd>Columns to retrieve from specified table</dd>
+<dt><strong><code>where</code></strong> :&ensp;<code>list</code>(<code>str</code>,), optional</dt>
+<dd>Conditional arguments to filter request (Default: None)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Found rows</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select(self, table, *args, where=None):
+    &#34;&#34;&#34; Retrieve information from specified table
+
+    Parameters
+    ----------
+    table : str
+        Table name
+    args : tuple(str,)
+        Columns to retrieve from specified table
+    where : list(str,), optional
+        Conditional arguments to filter request (Default: None)
+
+    Returns
+    -------
+    list
+        Found rows
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    request = f&#34;SELECT {escape_request(*args)} FROM \&#34;{table}\&#34;&#34;
+
+    if where is not None:
+
+        if type(where) is list:
+            where = &#34; AND &#34;.join(where)
+
+        request += f&#34; WHERE {where}&#34;
+
+    request += &#39;;&#39;
+
+    return self.__execute(SqliteDatabase.Type.SELECT, request)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.set_progress_handler"><code class="name flex">
+<span>def <span class="ident">set_progress_handler</span></span>(<span>self, handler, step=1)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Set a progress handler for database requests</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>handler</code></strong> :&ensp;<code>builtin_function_or_method</code></dt>
+<dd>Function to call every updated step</dd>
+<dt><strong><code>step</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Step to wait between each update (Default: 1)</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_progress_handler(self, handler, step=1):
+    &#34;&#34;&#34; Set a progress handler for database requests
+
+    Parameters
+    ----------
+    handler : builtin_function_or_method
+        Function to call every updated step
+    step : int, optional
+        Step to wait between each update (Default: 1)
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    self.__connection.set_progress_handler(handler, step)</code></pre>
+</details>
+</dd>
+<dt id="geode.lib.database.sqlite.SqliteDatabase.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, table, where=None, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Update data from table for a specific row</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>table</code></strong> :&ensp;<code>str</code></dt>
+<dd>Table name</dd>
+<dt><strong><code>kwargs</code></strong> :&ensp;<code>dict</code>(<code>str</code>: <code>str</code>,)</dt>
+<dd>Values to update with column as key</dd>
+<dt><strong><code>where</code></strong> :&ensp;<code>list</code>(<code>str</code>,), optional</dt>
+<dd>Conditional arguments to filter request (Default: None)</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>SystemError</code></dt>
+<dd>when database connection is not etablish</dd>
+<dt><code>AttributeError</code></dt>
+<dd>when values to update are missing from arguments</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update(self, table, where=None, **kwargs):
+    &#34;&#34;&#34; Update data from table for a specific row
+
+    Parameters
+    ----------
+    table : str
+        Table name
+    kwargs : dict(str: str,)
+        Values to update with column as key
+    where : list(str,), optional
+        Conditional arguments to filter request (Default: None)
+
+    Raises
+    ------
+    SystemError
+        when database connection is not etablish
+    AttributeError
+        when values to update are missing from arguments
+    &#34;&#34;&#34;
+
+    if self.__connection is None:
+        raise SystemError(&#34;Cannot execute a request without connection&#34;)
+
+    if not kwargs:
+        raise AttributeError(&#34;No argument available to manage request&#34;)
+
+    request = f&#34;UPDATE \&#34;{table}\&#34; SET {escape_request(**kwargs)}&#34;
+
+    if where is not None:
+
+        if type(where) is list:
+            where = &#34; AND &#34;.join(where)
+
+        request += f&#34; WHERE {where}&#34;
+
+    request += &#39;;&#39;
+
+    self.__execute(SqliteDatabase.Type.UPDATE, request)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="geode.lib.common.CommonPath" href="../common.html#geode.lib.common.CommonPath">CommonPath</a></b></code>:
+<ul class="hlist">
+<li><code><a title="geode.lib.common.CommonPath.exists" href="../common.html#geode.lib.common.CommonPath.exists">exists</a></code></li>
+<li><code><a title="geode.lib.common.CommonPath.path" href="../common.html#geode.lib.common.CommonPath.path">path</a></code></li>
+<li><code><a title="geode.lib.common.CommonPath.set_path" href="../common.html#geode.lib.common.CommonPath.set_path">set_path</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="geode.lib.database" href="index.html">geode.lib.database</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="geode.lib.database.sqlite.SqliteDatabase" href="#geode.lib.database.sqlite.SqliteDatabase">SqliteDatabase</a></code></h4>
+<ul class="">
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.Type" href="#geode.lib.database.sqlite.SqliteDatabase.Type">Type</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.alter_table" href="#geode.lib.database.sqlite.SqliteDatabase.alter_table">alter_table</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.connect" href="#geode.lib.database.sqlite.SqliteDatabase.connect">connect</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.create_table" href="#geode.lib.database.sqlite.SqliteDatabase.create_table">create_table</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.delete" href="#geode.lib.database.sqlite.SqliteDatabase.delete">delete</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.drop_table" href="#geode.lib.database.sqlite.SqliteDatabase.drop_table">drop_table</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.insert" href="#geode.lib.database.sqlite.SqliteDatabase.insert">insert</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.is_connected" href="#geode.lib.database.sqlite.SqliteDatabase.is_connected">is_connected</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.pragma_table" href="#geode.lib.database.sqlite.SqliteDatabase.pragma_table">pragma_table</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.select" href="#geode.lib.database.sqlite.SqliteDatabase.select">select</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.set_progress_handler" href="#geode.lib.database.sqlite.SqliteDatabase.set_progress_handler">set_progress_handler</a></code></li>
+<li><code><a title="geode.lib.database.sqlite.SqliteDatabase.update" href="#geode.lib.database.sqlite.SqliteDatabase.update">update</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.4</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
